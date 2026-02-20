@@ -4,142 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="@color/surface"
     android:fitsSystemWindows="true"
     tools:context=".Buscar_trabajo">
 
+    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="68dp"
         android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
-        android:elevation="8dp"
+        android:background="@color/nav_bar_bg"
+        android:elevation="4dp"
         android:orientation="horizontal"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:paddingTop="6dp">
 
-        <LinearLayout
-            android:id="@+id/nav_inicio"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:clickable="true"
-            android:focusable="true">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/inicio"
-                app:tint="#AAAAAA"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Inicio"
-                android:textSize="10sp"
-                android:textColor="#AAAAAA"/>
+        <LinearLayout android:id="@+id/nav_inicio" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/inicio" app:tint="@color/nav_inactive"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Inicio" android:textSize="11sp" android:textColor="@color/nav_inactive" android:layout_marginTop="4dp"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/nav_buscar"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:clickable="true"
-            android:focusable="true">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/buscarr"
-                app:tint="#FF6A00"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Buscar"
-                android:textSize="10sp"
-                android:textColor="#FF6A00"/>
+        <LinearLayout android:id="@+id/nav_buscar" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true">
+            <FrameLayout android:layout_width="56dp" android:layout_height="28dp" android:background="@drawable/bg_nav_indicator">
+                <ImageView android:layout_width="22dp" android:layout_height="22dp" android:layout_gravity="center" android:src="@drawable/buscarr" app:tint="@color/naranja_principal"/>
+            </FrameLayout>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Buscar" android:textSize="11sp" android:textStyle="bold" android:textColor="@color/naranja_principal" android:layout_marginTop="2dp"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/nav_publicaciones"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:clickable="true"
-            android:focusable="true">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/publicaciones"
-                app:tint="#AAAAAA"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Publicaciones"
-                android:textSize="10sp"
-                android:textColor="#AAAAAA"/>
+        <LinearLayout android:id="@+id/nav_publicaciones" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/publicaciones" app:tint="@color/nav_inactive"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Publicaciones" android:textSize="11sp" android:textColor="@color/nav_inactive" android:layout_marginTop="4dp"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/nav_chat"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:clickable="true"
-            android:focusable="true">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/chat"
-                app:tint="#AAAAAA"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chat"
-                android:textSize="10sp"
-                android:textColor="#AAAAAA"/>
+        <LinearLayout android:id="@+id/nav_chat" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/chat" app:tint="@color/nav_inactive"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Chat" android:textSize="11sp" android:textColor="@color/nav_inactive" android:layout_marginTop="4dp"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/nav_perfil"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:clickable="true"
-            android:focusable="true">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/perfil"
-                app:tint="#AAAAAA"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Perfil"
-                android:textSize="10sp"
-                android:textColor="#AAAAAA"/>
+        <LinearLayout android:id="@+id/nav_perfil" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/perfil" app:tint="@color/nav_inactive"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Perfil" android:textSize="11sp" android:textColor="@color/nav_inactive" android:layout_marginTop="4dp"/>
         </LinearLayout>
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation_bar">
+        android:layout_above="@id/bottom_navigation_bar"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
 
+            <!-- Back Button -->
             <LinearLayout
                 android:id="@+id/btn_volver_contenedor"
                 android:layout_width="wrap_content"
@@ -148,163 +71,191 @@
                 android:gravity="center_vertical"
                 android:clickable="true"
                 android:focusable="true"
-                android:padding="8dp">
+                android:padding="4dp">
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
                     android:src="@drawable/ic_arrow_back"
-                    app:tint="#FF6A00"/>
+                    app:tint="@color/on_surface" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Volver"
-                    android:textColor="#FF6A00"
+                    android:textColor="@color/on_surface_variant"
                     android:layout_marginStart="8dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textSize="15sp" />
             </LinearLayout>
 
+            <!-- Title -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Buscar Trabajo"
-                android:textSize="26sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
-                android:textColor="#333333"
-                android:layout_marginTop="16dp"/>
+                android:textColor="@color/on_surface"
+                android:layout_marginTop="16dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Explora oportunidades disponibles"
-                android:textColor="#7A7A7A"
-                android:layout_marginBottom="20dp"/>
+                android:textColor="@color/on_surface_variant"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="20dp" />
 
+            <!-- Search Bar M3 -->
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="¿Qué buscas hoy?"
-                android:background="@drawable/bd_rounded"
-                android:paddingHorizontal="16dp"
+                android:layout_height="52dp"
+                android:hint="Que buscas hoy?"
+                android:textColorHint="@color/on_surface_dim"
+                android:textColor="@color/on_surface"
+                android:background="@drawable/bg_search_m3"
+                android:paddingHorizontal="20dp"
                 android:drawableStart="@drawable/buscarr"
-                android:drawablePadding="10dp"
-                android:textSize="14sp"/>
+                android:drawablePadding="12dp"
+                android:textSize="14sp"
+                android:singleLine="true" />
 
             <Spinner
                 android:id="@+id/spCategoria"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="52dp"
                 android:layout_marginTop="12dp"
-                android:background="@drawable/bd_rounded"/>
+                android:background="@drawable/bg_spinner" />
 
+            <!-- Job Card 1 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/surface">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="20dp">
+
+                    <!-- Category Chip -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="DESARROLLO MÓVIL"
+                        android:text="DESARROLLO MOVIL"
                         android:textSize="11sp"
                         android:textStyle="bold"
-                        android:textColor="#FF6A00"/>
+                        android:textColor="@color/naranja_on_container"
+                        android:background="@drawable/bg_chip_filter_selected"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="4dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="App E-commerce"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        android:layout_marginTop="4dp"
-                        android:textColor="#222222"/>
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/on_surface" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TechStore • Bogotá • Hace 2h"
-                        android:textColor="#7A7A7A"
-                        android:textSize="13sp"/>
+                        android:text="TechStore - Bogota - Hace 2h"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="13sp"
+                        android:layout_marginTop="4dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="14dp"
                         android:text="$8.000.000 - $12.000.000"
                         android:textStyle="bold"
-                        android:textColor="#4CAF50"
-                        android:textSize="16sp"/>
+                        android:textColor="@color/verde_trabajar"
+                        android:textSize="16sp" />
+
                     <Button
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="52dp"
                         android:text="Enviar Propuesta"
-                        android:backgroundTint="#FF6A00"
-                        android:textColor="#FFFFFF"
+                        android:background="@drawable/bg_button_primary"
+                        android:textColor="@color/white"
                         android:layout_marginTop="16dp"
                         android:textAllCaps="false"
-                        android:textSize="16sp"/>
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- Job Card 2 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                android:layout_marginTop="14dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/surface">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="20dp">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="DISEÑO UI/UX"
+                        android:text="DISENO UI/UX"
                         android:textSize="11sp"
                         android:textStyle="bold"
-                        android:textColor="#FF6A00"/>
+                        android:textColor="@color/naranja_on_container"
+                        android:background="@drawable/bg_chip_filter_selected"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="4dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rediseño Plataforma Web"
+                        android:text="Rediseno Plataforma Web"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        android:layout_marginTop="4dp"
-                        android:textColor="#222222"/>
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/on_surface" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nova Soft • Remoto • Hace 5h"
-                        android:textColor="#7A7A7A"
-                        android:textSize="13sp"/>
+                        android:text="Nova Soft - Remoto - Hace 5h"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="13sp"
+                        android:layout_marginTop="4dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="14dp"
                         android:text="$5.000.000 - $7.500.000"
                         android:textStyle="bold"
-                        android:textColor="#4CAF50"
-                        android:textSize="16sp"/>
+                        android:textColor="@color/verde_trabajar"
+                        android:textSize="16sp" />
+
                     <Button
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="52dp"
                         android:text="Enviar Propuesta"
-                        android:backgroundTint="#FF6A00"
-                        android:textColor="#FFFFFF"
+                        android:background="@drawable/bg_button_primary"
+                        android:textColor="@color/white"
                         android:layout_marginTop="16dp"
                         android:textAllCaps="false"
-                        android:textSize="16sp"/>
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="80dp"/>
-
+            <View android:layout_width="match_parent" android:layout_height="16dp" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

@@ -2,19 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0B1320"
+    android:background="@color/splash_dark"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="24dp">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.2" />
 
+    <!-- Logo Container -->
     <FrameLayout
-        android:layout_width="240dp"
-        android:layout_height="240dp"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
         android:layout_gravity="center">
 
         <View
@@ -23,41 +24,47 @@
             android:background="@drawable/gradiante" />
 
         <LinearLayout
-            android:layout_width="140dp"
-            android:layout_height="140dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_gravity="center"
             android:background="@drawable/bordes_redondos"
-            android:gravity="center">
+            android:gravity="center"
+            android:elevation="6dp">
 
             <ImageView
-                android:layout_width="85dp"
-                android:layout_height="85dp"
-                android:src="@drawable/logo_gxnova" />
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/logo_gxnova"
+                android:contentDescription="Logo GXNOVA" />
         </LinearLayout>
     </FrameLayout>
 
+    <!-- App Name -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-20dp"
+        android:layout_marginTop="24dp"
         android:text="@string/app_name"
-        android:textColor="#FFFFFF"
-        android:textSize="38sp"
-        android:textStyle="bold" />
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.02" />
 
+    <!-- Slogan -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:text="@string/eslogan"
-        android:textColor="#A0AEC0"
-        android:textSize="16sp" />
+        android:textColor="#B0A08A"
+        android:textSize="14sp" />
 
+    <!-- Loading Indicator -->
     <FrameLayout
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_gravity="center"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/circle_border_small">
 
         <View
@@ -70,35 +77,36 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:text="@string/cargando"
-        android:textColor="#E0E0E0"
-        android:textSize="15sp" />
+        android:textColor="#D4C4AA"
+        android:textSize="14sp" />
 
     <ProgressBar
         android:id="@+id/progressBarSplash"
         style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="160dp"
+        android:layout_width="140dp"
         android:layout_height="4dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:indeterminate="false"
         android:max="100"
         android:progress="0"
-        android:progressTint="#FFFFFF" />
+        android:progressTint="@color/naranja_principal" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
+    <!-- Footer -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:lineSpacingExtra="4dp"
         android:text="@string/conectando"
-        android:textColor="#5F6A7A"
+        android:textColor="#6B5D4D"
         android:textSize="12sp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="12dp" />
 
 </LinearLayout>

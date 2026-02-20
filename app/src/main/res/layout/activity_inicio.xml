@@ -5,19 +5,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/surface"
     android:fitsSystemWindows="true"
     tools:context=".Inicio">
 
+    <!-- Bottom Navigation Bar - Material You Style -->
     <LinearLayout
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="68dp"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        android:background="@android:color/white"
+        android:background="@color/nav_bar_bg"
         android:layout_alignParentBottom="true"
-        android:elevation="8dp">
+        android:elevation="4dp"
+        android:paddingTop="6dp">
 
         <LinearLayout
             android:id="@+id/nav_inicio"
@@ -28,17 +30,25 @@
             android:orientation="vertical"
             android:clickable="true"
             android:focusable="true">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/inicio"
-                app:tint="#FF6A00"/>
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="28dp"
+                android:background="@drawable/bg_nav_indicator">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/inicio"
+                    app:tint="@color/naranja_principal" />
+            </FrameLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Inicio"
-                android:textSize="10sp"
-                android:textColor="#FF6A00"/>
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/naranja_principal"
+                android:layout_marginTop="2dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -51,16 +61,17 @@
             android:clickable="true"
             android:focusable="true">
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
                 android:src="@drawable/buscarr"
-                app:tint="#AAAAAA"/>
+                app:tint="@color/nav_inactive" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Buscar"
-                android:textSize="10sp"
-                android:textColor="#AAAAAA"/>
+                android:textSize="11sp"
+                android:textColor="@color/nav_inactive"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,16 +84,17 @@
             android:clickable="true"
             android:focusable="true">
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
                 android:src="@drawable/publicaciones"
-                app:tint="#AAAAAA"/>
+                app:tint="@color/nav_inactive" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Publicaciones"
-                android:textSize="10sp"
-                android:textColor="#AAAAAA"/>
+                android:textSize="11sp"
+                android:textColor="@color/nav_inactive"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -95,16 +107,17 @@
             android:clickable="true"
             android:focusable="true">
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
                 android:src="@drawable/chat"
-                app:tint="#AAAAAA"/>
+                app:tint="@color/nav_inactive" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Chat"
-                android:textSize="10sp"
-                android:textColor="#AAAAAA"/>
+                android:textSize="11sp"
+                android:textColor="@color/nav_inactive"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -117,134 +130,659 @@
             android:clickable="true"
             android:focusable="true">
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
                 android:src="@drawable/perfil"
-                app:tint="#AAAAAA"/>
+                app:tint="@color/nav_inactive" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Perfil"
-                android:textSize="10sp"
-                android:textColor="#AAAAAA"/>
+                android:textSize="11sp"
+                android:textColor="@color/nav_inactive"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
     </LinearLayout>
 
+    <!-- Scrollable Content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation_bar">
+        android:layout_above="@id/bottom_navigation_bar"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
 
+            <!-- Header - Clean Surface -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FF6A00"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:background="@color/surface"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
-                    <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/gaex"/>
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Hola, User" android:textColor="#FFFFFF" android:textSize="20sp" android:textStyle="bold" android:layout_marginStart="12dp" />
-                    <ImageView android:id="@+id/noti_icon" android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/notificacion" app:tint="#FFFFFF" android:clickable="true" android:focusable="true" />
+
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:src="@drawable/gaex"
+                        android:contentDescription="Avatar" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hola, User"
+                            android:textColor="@color/on_surface"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Encuentra tu proximo trabajo"
+                            android:textColor="@color/on_surface_variant"
+                            android:textSize="13sp"
+                            android:layout_marginTop="2dp" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/noti_icon"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_icon_container"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/notificacion"
+                            app:tint="@color/naranja_on_container" />
+                    </FrameLayout>
                 </LinearLayout>
+
+                <!-- Search Bar M3 -->
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/bd_rounded"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_search_m3"
                     android:drawableStart="@drawable/buscar1"
-                    android:drawablePadding="8dp"
-                    android:hint="¿Qué servicio necesitas?"
-                    android:paddingStart="16dp"
-                    android:textSize="14sp" />
+                    android:drawablePadding="12dp"
+                    android:hint="Que servicio necesitas?"
+                    android:textColorHint="@color/on_surface_dim"
+                    android:textColor="@color/on_surface"
+                    android:paddingStart="20dp"
+                    android:textSize="14sp"
+                    android:singleLine="true" />
             </LinearLayout>
 
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:text="¿Qué quieres hacer hoy?" android:textColor="#333333" android:textSize="18sp" android:textStyle="bold" />
+            <!-- What do you want to do Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="14dp"
+                android:text="Que quieres hacer hoy?"
+                android:textColor="@color/on_surface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingHorizontal="16dp" android:layout_marginBottom="20dp">
-                <androidx.cardview.widget.CardView android:id="@+id/btn_publicar" android:layout_width="0dp" android:layout_height="140dp" android:layout_weight="1" android:layout_marginEnd="8dp" app:cardBackgroundColor="#FF6A00" app:cardCornerRadius="12dp" android:clickable="true" android:focusable="true">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
-                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/maleta" app:tint="#FFFFFF"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Publicar empleo" android:textColor="#FFFFFF" android:textStyle="bold" android:layout_marginTop="8dp"/>
+            <!-- Action Cards - Material You Containers -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="24dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_publicar"
+                    android:layout_width="0dp"
+                    android:layout_height="130dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardBackgroundColor="@color/naranja_container"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <FrameLayout
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:background="@drawable/bg_icon_container">
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/maleta"
+                                app:tint="@color/naranja_on_container" />
+                        </FrameLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Publicar empleo"
+                            android:textColor="@color/naranja_on_container"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:layout_marginTop="10dp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView android:id="@+id/btn_trabajar" android:layout_width="0dp" android:layout_height="140dp" android:layout_weight="1" android:layout_marginStart="8dp" app:cardBackgroundColor="#4CAF50" app:cardCornerRadius="12dp" android:clickable="true" android:focusable="true">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
-                        <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/buscar" app:tint="#FFFFFF"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Trabajar" android:textColor="#FFFFFF" android:textStyle="bold" android:layout_marginTop="8dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_trabajar"
+                    android:layout_width="0dp"
+                    android:layout_height="130dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardBackgroundColor="@color/verde_container"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <FrameLayout
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:background="@drawable/bg_icon_green_container">
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/buscar"
+                                app:tint="@color/verde_on_container" />
+                        </FrameLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Trabajar"
+                            android:textColor="@color/verde_on_container"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:layout_marginTop="10dp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="16dp" android:text="Acciones Rápidas" android:textColor="#333333" android:textSize="18sp" android:textStyle="bold" />
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="16dp">
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-                    <androidx.cardview.widget.CardView android:layout_width="50dp" android:layout_height="50dp" app:cardBackgroundColor="#FF6A00" app:cardCornerRadius="25dp"><ImageView android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="center" android:src="@drawable/alarma" app:tint="#FFFFFF"/></androidx.cardview.widget.CardView>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Urgentes" android:textSize="12sp" />
+            <!-- Quick Actions -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="14dp"
+                android:text="Acciones Rapidas"
+                android:textColor="@color/on_surface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_icon_container">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/alarma"
+                            app:tint="@color/naranja_on_container" />
+                    </FrameLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Urgentes"
+                        android:textSize="12sp"
+                        android:textColor="@color/on_surface_variant"
+                        android:layout_marginTop="6dp" />
                 </LinearLayout>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-                    <androidx.cardview.widget.CardView android:layout_width="50dp" android:layout_height="50dp" app:cardBackgroundColor="#FF6A00" app:cardCornerRadius="25dp"><ImageView android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="center" android:src="@drawable/estrella" app:tint="#FFFFFF"/></androidx.cardview.widget.CardView>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Talento" android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_icon_container">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/estrella"
+                            app:tint="@color/naranja_on_container" />
+                    </FrameLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Talento"
+                        android:textSize="12sp"
+                        android:textColor="@color/on_surface_variant"
+                        android:layout_marginTop="6dp" />
                 </LinearLayout>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-                    <androidx.cardview.widget.CardView android:layout_width="50dp" android:layout_height="50dp" app:cardBackgroundColor="#FF6A00" app:cardCornerRadius="25dp"><ImageView android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="center" android:src="@drawable/caja" app:tint="#FFFFFF"/></androidx.cardview.widget.CardView>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mis tareas" android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_icon_container">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/caja"
+                            app:tint="@color/naranja_on_container" />
+                    </FrameLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mis tareas"
+                        android:textSize="12sp"
+                        android:textColor="@color/on_surface_variant"
+                        android:layout_marginTop="6dp" />
                 </LinearLayout>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-                    <androidx.cardview.widget.CardView android:layout_width="50dp" android:layout_height="50dp" app:cardBackgroundColor="#FF6A00" app:cardCornerRadius="25dp"><ImageView android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="center" android:src="@drawable/lupa" app:tint="#FFFFFF"/></androidx.cardview.widget.CardView>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Buscar" android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_icon_container">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/lupa"
+                            app:tint="@color/naranja_on_container" />
+                    </FrameLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Buscar"
+                        android:textSize="12sp"
+                        android:textColor="@color/on_surface_variant"
+                        android:layout_marginTop="6dp" />
                 </LinearLayout>
             </LinearLayout>
 
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="16dp" android:text="Servicios Principales" android:textColor="#333333" android:textSize="18sp" android:textStyle="bold" />
+            <!-- Services Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="14dp"
+                android:text="Servicios Principales"
+                android:textColor="@color/on_surface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingHorizontal="16dp" android:paddingTop="8dp">
-                <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="5dp" app:cardCornerRadius="12dp" app:cardElevation="4dp"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp"><ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/piaggio"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Piaggio" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$20.000" android:textColor="#4CAF50"/></LinearLayout></androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="5dp" app:cardCornerRadius="12dp" app:cardElevation="4dp"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp"><ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/jardineria"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Jardinería" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$15.000" android:textColor="#4CAF50"/></LinearLayout></androidx.cardview.widget.CardView>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingHorizontal="16dp">
-                <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="5dp" app:cardCornerRadius="12dp" app:cardElevation="4dp"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp"><ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/mototaxi"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mototaxi" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$10.000" android:textColor="#4CAF50"/></LinearLayout></androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="5dp" app:cardCornerRadius="12dp" app:cardElevation="4dp"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp"><ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/plomero"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Plomero" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$35.000" android:textColor="#4CAF50"/></LinearLayout></androidx.cardview.widget.CardView>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingHorizontal="16dp">
-                <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="5dp" app:cardCornerRadius="12dp" app:cardElevation="4dp"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp"><ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/gruas"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gruas" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$80.000" android:textColor="#4CAF50"/></LinearLayout></androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="5dp" app:cardCornerRadius="12dp" app:cardElevation="4dp"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp"><ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/pintor"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pintor" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$30.000" android:textColor="#4CAF50"/></LinearLayout></androidx.cardview.widget.CardView>
+            <!-- Service Cards Row 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="4dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:cardBackgroundColor="@color/surface">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/piaggio" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Piaggio"
+                            android:textStyle="bold"
+                            android:textColor="@color/on_surface"
+                            android:textSize="14sp"
+                            android:layout_marginTop="10dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$20.000"
+                            android:textColor="@color/verde_trabajar"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:cardBackgroundColor="@color/surface">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/jardineria" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jardineria"
+                            android:textStyle="bold"
+                            android:textColor="@color/on_surface"
+                            android:textSize="14sp"
+                            android:layout_marginTop="10dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$15.000"
+                            android:textColor="@color/verde_trabajar"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
+            <!-- Service Cards Row 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="4dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:cardBackgroundColor="@color/surface">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/mototaxi" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mototaxi"
+                            android:textStyle="bold"
+                            android:textColor="@color/on_surface"
+                            android:textSize="14sp"
+                            android:layout_marginTop="10dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$10.000"
+                            android:textColor="@color/verde_trabajar"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:cardBackgroundColor="@color/surface">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/plomero" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Plomero"
+                            android:textStyle="bold"
+                            android:textColor="@color/on_surface"
+                            android:textSize="14sp"
+                            android:layout_marginTop="10dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$35.000"
+                            android:textColor="@color/verde_trabajar"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Service Cards Row 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="4dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:cardBackgroundColor="@color/surface">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/gruas" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gruas"
+                            android:textStyle="bold"
+                            android:textColor="@color/on_surface"
+                            android:textSize="14sp"
+                            android:layout_marginTop="10dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$80.000"
+                            android:textColor="@color/verde_trabajar"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:cardBackgroundColor="@color/surface">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/pintor" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pintor"
+                            android:textStyle="bold"
+                            android:textColor="@color/on_surface"
+                            android:textSize="14sp"
+                            android:layout_marginTop="10dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$30.000"
+                            android:textColor="@color/verde_trabajar"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Stats Card - Surface with accent -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                app:cardBackgroundColor="#FF6A00"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:paddingVertical="20dp">
-                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2.5M+" android:textColor="#FFFFFF" android:textSize="22sp" android:textStyle="bold" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Publicaciones" android:textColor="#FFFFFF" android:textSize="10sp" />
+                    android:paddingVertical="24dp"
+                    android:paddingHorizontal="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2.5M+"
+                            android:textColor="@color/naranja_principal"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Publicaciones"
+                            android:textColor="@color/on_surface_variant"
+                            android:textSize="12sp"
+                            android:layout_marginTop="4dp" />
                     </LinearLayout>
-                    <View android:layout_width="1dp" android:layout_height="40dp" android:background="#77FFFFFF" />
-                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="850K+" android:textColor="#FFFFFF" android:textSize="22sp" android:textStyle="bold" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Candidatos" android:textColor="#FFFFFF" android:textSize="10sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="44dp"
+                        android:background="@color/outline_variant" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="850K+"
+                            android:textColor="@color/naranja_principal"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Candidatos"
+                            android:textColor="@color/on_surface_variant"
+                            android:textSize="12sp"
+                            android:layout_marginTop="4dp" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <View android:layout_width="match_parent" android:layout_height="20dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
